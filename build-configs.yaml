@@ -1,0 +1,31 @@
+name: drupal-london-meetup
+template: drupal
+web:
+  type: nginx
+database:
+  type: mariadb
+  version: 10
+php:
+  version: 8.3-fpm-bullseye
+  phpcs:
+    paths:
+      - web/modules/custom
+    standards:
+      - Drupal
+      - DrupalPractice
+  phpstan: false
+drupal:
+  docroot: web
+docker-compose:
+  services:
+    - database
+    - php
+    - web
+dockerfile:
+  stages:
+    build:
+      commands:
+        - composer validate --strict
+        - composer install
+experimental:
+  createGitHubActionsConfiguration: false

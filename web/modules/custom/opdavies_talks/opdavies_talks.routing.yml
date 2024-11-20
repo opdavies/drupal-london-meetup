@@ -1,0 +1,6 @@
+opdavies_talks.page:
+  path: /talks
+  defaults:
+    _controller: Drupal\opdavies_talks\Controller\TalksPageController
+  requirements:
+    _permission: access content

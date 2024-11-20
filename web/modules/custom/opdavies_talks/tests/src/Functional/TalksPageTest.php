@@ -18,4 +18,11 @@ class TalksPageTest extends BrowserTestBase {
     $session->statusCodeEquals(Response::HTTP_OK);
   }
 
+  public function test_it_displays_the_talk_count(): void {
+    $this->drupalGet('/talks');
+
+    $session = $this->assertSession();
+    $session->responseContains('<span data-talk-count>2 talks</span>');
+  }
+
 }

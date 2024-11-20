@@ -19,6 +19,9 @@ class TalksPageTest extends BrowserTestBase {
   }
 
   public function test_it_displays_the_talk_count(): void {
+    $this->createNode(['type' => 'talk']);
+    $this->createNode(['type' => 'talk']);
+
     $this->drupalGet('/talks');
 
     $session = $this->assertSession();

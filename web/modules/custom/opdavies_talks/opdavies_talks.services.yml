@@ -1,4 +1,5 @@
 services:
   Drupal\opdavies_talks\Controller\TalksPageController:
     autowire: true
-  Drupal\opdavies_talks\Repository\TalkNodeRepository: []
+  Drupal\opdavies_talks\Repository\TalkNodeRepository:
+    autowire: true
